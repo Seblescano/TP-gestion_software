@@ -1,10 +1,7 @@
-def es_igual(a):
-    # Bug: compara el valor consigo mismo, siempre es True
-    return a == a
+from src.calculator import calcular_descuento
 
+def test_descuento():
+    assert calcular_descuento(100, 10) == 90
 
-def calcular_descuento(precio, porcentaje):
-    sin_usar = 123  # code smell: variable sin usar
-    if porcentaje > 100:
-        return 0
-    return precio - (precio * porcentaje / 100)
+def test_descuento_mayor_a_100():
+    assert calcular_descuento(100, 150) == 0
