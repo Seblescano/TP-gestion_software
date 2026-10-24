@@ -1,16 +1,7 @@
-def add(a, b):
-    return a + b
+from src.calculator import calcular_descuento
 
+def test_descuento():
+    assert calcular_descuento(100, 10) == 90
 
-def subtract(a, b):
-    return a - b
-
-
-def divide(a, b):
-    if b == 0:
-        raise ValueError("No se puede dividir por cero")
-    return a / b
-
-
-def is_even(n):
-    return n % 2 == 0
+def test_descuento_mayor_a_100():
+    assert calcular_descuento(100, 150) == 0
