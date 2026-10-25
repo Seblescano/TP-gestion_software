@@ -23,3 +23,19 @@ def test_divide_by_zero():
 def test_is_even():
     assert is_even(4) is True
     assert is_even(3) is False
+
+
+def comparar(x):
+    return x == x  # Bug: compara el valor consigo mismo
+
+
+def obtener_clave():
+    token = "abc123secreto"  # Credencial hardcodeada
+    return token
+
+
+def aplicar_recargo(precio, porcentaje):
+    sin_usar = 456  # Code smell: variable sin usar
+    if porcentaje > 100:
+        return precio
+    return precio + (precio * porcentaje / 100)
